@@ -1,13 +1,242 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+}
+
+.page-content {
+  flex: 1;
+  padding-top: 32px; /* 32px : topbar height */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  height: "100%";
+
+  @media screen and (min-width: 744px) {
+    padding-top: 64px;
+    margin: 0 auto;
+    max-width: 744px;
+    width: 100%;
+  }
+}
+
+.text-box {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  background-color: #000;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  justify-content: space-around;
+  display: flex;
+
+  font-size: 12px;
+
+  @media screen and (min-width: 744px) {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 744px;
+    font-size: 16px;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* font */
+.f3 {
+  font-size: 12px;
+  font-family: "ChosunGu";
+  @media screen and (min-width: 744px) {
+    font-size: medium;
+  }
+}
+
+.f2 {
+  font-size: medium;
+  font-family: "ChosunGu";
+  white-space: nowrap;
+  @media screen and (min-width: 744px) {
+    font-size: large;
+  }
+}
+
+.f1 {
+  font-size: large;
+  font-family: "ChosunGu";
+  @media screen and (min-width: 744px) {
+    font-size: x-large;
+  }
+}
+
+.t2 {
+  font-size: 24px;
+  font-family: "ChosunGu";
+  line-height: 0.9;
+  @media screen and (min-width: 744px) {
+    font-size: 32px;
+  }
+}
+
+.t1 {
+  font-size: 48px;
+  font-family: "ChosunBg";
+  line-height: 0.9;
+  @media screen and (min-width: 744px) {
+    font-size: 64px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.align-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
+.accent {
+  font-family: "ONE-Mobile-POP";
+  text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px -1px 0 #fff;
+  color: red;
+  font-size: 36px;
+  @media screen and (min-width: 744px) {
+    font-size: 48px;
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  z-index: 10;
+  justify-content: space-between;
+  @media screen and (min-width: 744px) {
+    height: 100%;
+  }
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+@font-face {
+  font-family: "seolleimcool-SemiBold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/seolleimcool-SemiBold.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ChosunGu";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ChosunBg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ONE-Mobile-POP";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JejuMyeongjo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Godo";
+  font-style: normal;
+  font-weight: normal;
+  src: url("//fastly.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2")
+      format("woff2"),
+    url("//fastly.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff")
+      format("woff");
 }
