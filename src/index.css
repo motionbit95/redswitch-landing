@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
 }
 
 code {
@@ -13,230 +14,131 @@ code {
 }
 
 .page {
-  display: flex;
-  flex-direction: column;
   height: 100vh;
-  overflow: hidden;
-  background-color: #000;
-  color: #fff;
-}
-
-.page-content {
-  flex: 1;
-  padding-top: 32px; /* 32px : topbar height */
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  gap: 32px;
-  height: "100%";
+  align-items: center;
+}
 
-  @media screen and (min-width: 744px) {
-    padding-top: 64px;
-    margin: 0 auto;
-    max-width: 744px;
-    width: 100%;
+.image {
+  max-width: 100%;
+  margin-top: 100px;
+  max-height: calc(100vh - 100px);
+  @media screen and (max-width: 600px) {
+    margin-top: 88px;
+    max-height: calc(100vh - 88px);
   }
 }
 
-.text-box {
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.logo {
+  width: 24px;
 }
 
-.topbar {
+.top {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
-
-  background-color: #000;
-  color: #fff;
-  padding: 16px;
-  text-align: center;
-  justify-content: space-around;
-  display: flex;
-
-  font-size: 12px;
-
-  @media screen and (min-width: 744px) {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 744px;
-    font-size: 16px;
+  z-index: 100;
+  height: 100px;
+  @media screen and (max-width: 600px) {
+    height: 88px;
   }
 }
 
-.col {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 100px;
+  @media screen and (max-width: 600px) {
+    height: 88px;
+  }
 }
 
 .row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-/* font */
-.f3 {
-  font-size: 12px;
-  font-family: "ChosunGu";
-  @media screen and (min-width: 744px) {
-    font-size: medium;
-  }
-}
-
-.f2 {
-  font-size: medium;
-  font-family: "ChosunGu";
-  white-space: nowrap;
-  @media screen and (min-width: 744px) {
-    font-size: large;
-  }
-}
-
-.f1 {
-  font-size: large;
-  font-family: "ChosunGu";
-  @media screen and (min-width: 744px) {
-    font-size: x-large;
-  }
-}
-
-.t2 {
-  font-size: 24px;
-  font-family: "ChosunGu";
-  line-height: 0.9;
-  @media screen and (min-width: 744px) {
-    font-size: 32px;
-  }
-}
-
-.t1 {
-  font-size: 48px;
-  font-family: "ChosunBg";
-  line-height: 0.9;
-  @media screen and (min-width: 744px) {
-    font-size: 64px;
-  }
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.underline {
-  text-decoration-line: underline;
-}
-
-.align-end {
+.top-logo {
+  padding: 8px 16px;
+  background-color: #000;
+  color: #fff;
   display: flex;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  font-size: x-large;
+  font-weight: bold;
+
+  @media screen and (max-width: 600px) {
+    font-size: medium;
+    padding: 8px;
+  }
 }
 
-.justify-center {
+.topbar {
+  height: 40px;
+  background-color: #2e2e2e;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+}
+
+.selected {
+  background-color: red;
+  color: white;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.text-center {
-  text-align: center;
-  white-space: nowrap;
-}
-
-.p-16 {
-  padding: 16px;
-}
-
-.accent {
-  font-family: "ONE-Mobile-POP";
-  text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff,
-    1px -1px 0 #fff;
-  color: red;
-  font-size: 36px;
-  @media screen and (min-width: 744px) {
-    font-size: 48px;
-  }
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  height: 80%;
-  z-index: 10;
-  justify-content: space-between;
-  @media screen and (min-width: 744px) {
-    height: 100%;
-  }
-}
-
-.image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.unselected {
+  color: #fff;
   width: 100%;
-  object-fit: cover;
-  z-index: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-@font-face {
-  font-family: "seolleimcool-SemiBold";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/seolleimcool-SemiBold.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
+.button {
+  padding: 8px 24px;
+  color: #fff;
+  border: none;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
 
-@font-face {
-  font-family: "ChosunGu";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "ChosunBg";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "ONE-Mobile-POP";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "JejuMyeongjo";
-  font-weight: normal;
-  font-style: normal;
-  src: url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.eot");
-  src: url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.woff2")
-      format("woff2"),
-    url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.woff")
-      format("woff"),
-    url("https://cdn.jsdelivr.net/gh/webfontworld/jeju/JejuMyeongjo.ttf")
-      format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Godo";
-  font-style: normal;
-  font-weight: normal;
-  src: url("//fastly.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2")
-      format("woff2"),
-    url("//fastly.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff")
-      format("woff");
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
 }

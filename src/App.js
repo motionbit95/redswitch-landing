@@ -1,14 +1,22 @@
 import React from "react";
 import { Section, SectionsContainer } from "react-fullpage";
-import Contact from "./pages/contact";
-import Main from "./pages/main";
 import Topbar from "./layout/topbar";
-import { Intro1, Intro2, Intro3 } from "./pages/intro";
-import { Service1, Service2, Service3, Service4 } from "./pages/service";
-import Customer from "./pages/customer";
+import Page from "./layout/page";
+// 페이지 이미지들
+import img1 from "./asset/page/1.png";
+import img2 from "./asset/page/2.png";
+import img3 from "./asset/page/3.png";
+import img4 from "./asset/page/4.png";
+import img5 from "./asset/page/5.png";
+import img6 from "./asset/page/6.png";
+import img7 from "./asset/page/7.png";
+import img8 from "./asset/page/8.png";
+import img9 from "./asset/page/9.png";
+import img10 from "./asset/page/10.png";
+import img11 from "./asset/page/11.png";
 
 let options = {
-  anchors: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+  anchors: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
   navigation: false,
   fitToSection: true,
 };
@@ -18,36 +26,41 @@ function App(props) {
     <>
       <Topbar />
       <SectionsContainer {...options}>
-        <Section id="main">
-          <Main />
+        <Section>
+          <Page>
+            <img src={img1} alt="main" className="image" />
+          </Page>
         </Section>
-        <Section id="intro1">
-          <Intro1 />
-        </Section>
-        <Section id="intro2">
-          <Intro2 />
-        </Section>
-        <Section id="intro3">
-          <Intro3 />
-        </Section>
-        <Section id="service1">
-          <Service1 />
-        </Section>
-        <Section id="service2">
-          <Service2 />
-        </Section>
-        <Section id="service3">
-          <Service3 />
-        </Section>
-        <Section id="service4">
-          <Service4 />
-        </Section>
-        <Section id="customer">
-          <Customer />
-        </Section>
-        <Section id="contact">
-          <Contact />
-        </Section>
+        <Page>
+          <img src={img2} alt="intro1" className="image" />
+        </Page>
+        <Page>
+          <img src={img3} alt="intro2" className="image" />
+        </Page>
+        <Page>
+          <img src={img4} alt="intro3" className="image" />
+        </Page>
+        <Page>
+          <img src={img5} alt="service1" className="image" />
+        </Page>
+        <Page>
+          <img src={img6} alt="service2" className="image" />
+        </Page>
+        <Page>
+          <img src={img7} alt="service3" className="image" />
+        </Page>
+        <Page>
+          <img src={img8} alt="service4" className="image" />
+        </Page>
+        <Page>
+          <img src={img9} alt="main" className="image" />
+        </Page>
+        <Page>
+          <img src={img10} alt="main" className="image" />
+        </Page>
+        <Page>
+          <img src={img11} alt="main" className="image" />
+        </Page>
       </SectionsContainer>
     </>
   );

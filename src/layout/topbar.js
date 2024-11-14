@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import logo from "../asset/image/redswitchLogo.png";
+
 function Topbar(props) {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
 
@@ -19,20 +21,66 @@ function Topbar(props) {
   }, []);
 
   return (
-    <div className="topbar">
-      <div className={currentHash === "#1" ? "bold underline" : ""}>MAIN</div>
-      <div
-        className={
-          currentHash === "#2" || currentHash === "#3" || currentHash === "#4"
-            ? "bold underline"
-            : ""
-        }
-      >
-        INTRO
+    <div className="top">
+      <div className="top-logo">
+        <div className="row">
+          <img src={logo} alt="logo" className="logo" />
+          <div>REDSWITCH</div>
+        </div>
+        <button
+          onClick={() => (window.location.href = "#10")}
+          className="button"
+        >
+          가맹점 신청하기
+        </button>
       </div>
-      <div>SERVICE</div>
-      <div>CUSTOMER</div>
-      <div>CONTACT US</div>
+      <div className="topbar">
+        <a
+          href="#1"
+          className={currentHash === "#1" ? "selected" : "unselected"}
+        >
+          MAIN
+        </a>
+        <a
+          href="#2"
+          className={
+            currentHash === "#2" || currentHash === "#3" || currentHash === "#4"
+              ? "selected"
+              : "unselected"
+          }
+        >
+          INTRO
+        </a>
+        <a
+          href="#5"
+          className={
+            currentHash === "#5" ||
+            currentHash === "#6" ||
+            currentHash === "#7" ||
+            currentHash === "#8"
+              ? "selected"
+              : "unselected"
+          }
+        >
+          SERVICE
+        </a>
+        <a
+          href="#9"
+          className={currentHash === "#9" ? "selected" : "unselected"}
+        >
+          CUSTOMER
+        </a>
+        <a
+          href="#10"
+          className={
+            currentHash === "#10" || currentHash === "#11"
+              ? "selected"
+              : "unselected"
+          }
+        >
+          CONTACT US
+        </a>
+      </div>
     </div>
   );
 }
