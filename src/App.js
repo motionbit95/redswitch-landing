@@ -14,6 +14,8 @@ import img8 from "./asset/page/8.png";
 import img9 from "./asset/page/9.png";
 import img10 from "./asset/page/10.png";
 import img11 from "./asset/page/11.png";
+import InstagramButton from "./layout/instagram";
+import CenteredForm from "./layout/form";
 
 let options = {
   anchors: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
@@ -53,15 +55,17 @@ function App(props) {
           <img src={img8} alt="service4" className="image" />
         </Page>
         <Page>
-          <img src={img9} alt="main" className="image" />
+          <img src={img9} alt="customer" className="image" />
         </Page>
         <Page>
-          <img src={img10} alt="main" className="image" />
+          <img src={img10} alt="contact" className="image" />
+          <CenteredForm />
         </Page>
         <Page>
-          <img src={img11} alt="main" className="image" />
+          <img src={img11} alt="location" className="image" />
         </Page>
       </SectionsContainer>
+      <InstagramButton />
     </>
   );
 }
