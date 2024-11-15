@@ -27,6 +27,7 @@ function Topbar(props) {
           <img src={logo} alt="logo" className="logo" />
           <div>REDSWITCH</div>
         </div>
+
         <button
           onClick={() => (window.location.href = "#10")}
           className="button"

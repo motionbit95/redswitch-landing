@@ -33,37 +33,57 @@ function App(props) {
             <img src={img1} alt="main" className="image" />
           </Page>
         </Section>
-        <Page>
-          <img src={img2} alt="intro1" className="image" />
-        </Page>
-        <Page>
-          <img src={img3} alt="intro2" className="image" />
-        </Page>
-        <Page>
-          <img src={img4} alt="intro3" className="image" />
-        </Page>
-        <Page>
-          <img src={img5} alt="service1" className="image" />
-        </Page>
-        <Page>
-          <img src={img6} alt="service2" className="image" />
-        </Page>
-        <Page>
-          <img src={img7} alt="service3" className="image" />
-        </Page>
-        <Page>
-          <img src={img8} alt="service4" className="image" />
-        </Page>
-        <Page>
-          <img src={img9} alt="customer" className="image" />
-        </Page>
-        <Page>
-          <img src={img10} alt="contact" className="image" />
-          <CenteredForm />
-        </Page>
-        <Page>
-          <img src={img11} alt="location" className="image" />
-        </Page>
+        <Section>
+          <Page pageNumber={1} groupNumber={3}>
+            <img src={img2} alt="intro1" className="image" />
+          </Page>
+        </Section>
+        <Section>
+          <Page pageNumber={2} groupNumber={3}>
+            <img src={img3} alt="intro2" className="image" />
+          </Page>
+        </Section>
+        <Section>
+          <Page pageNumber={3} groupNumber={3}>
+            <img src={img4} alt="intro3" className="image" />
+          </Page>
+        </Section>
+        <Section>
+          <Page pageNumber={1} groupNumber={4}>
+            <img src={img5} alt="service1" className="image" />
+          </Page>
+        </Section>
+        <Section>
+          <Page pageNumber={2} groupNumber={4}>
+            <img src={img6} alt="service2" className="image" />
+          </Page>
+        </Section>
+        <Section>
+          <Page pageNumber={3} groupNumber={4}>
+            <img src={img7} alt="service3" className="image" />
+          </Page>
+        </Section>
+        <Section>
+          <Page pageNumber={4} groupNumber={4}>
+            <img src={img8} alt="service4" className="image" />
+          </Page>
+        </Section>
+        <Section>
+          <Page>
+            <img src={img9} alt="customer" className="image" />
+          </Page>
+        </Section>
+        <Section>
+          <Page>
+            <img src={img10} alt="contact" className="image" />
+            <CenteredForm />
+          </Page>
+        </Section>
+        <Section>
+          <Page>
+            <img src={img11} alt="location" className="image" />
+          </Page>
+        </Section>
       </SectionsContainer>
       <InstagramButton />
     </>
