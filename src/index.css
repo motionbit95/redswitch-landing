@@ -14,7 +14,7 @@ code {
 }
 
 .page {
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   display: flex;
   justify-content: center;
   align-items: center;
