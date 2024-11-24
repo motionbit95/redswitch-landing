@@ -5,7 +5,7 @@ const InstagramButton = () => (
   <div
     style={{
       position: "fixed",
-      right: 16,
+      right: 24,
       bottom: 48,
       borderRadius: "50%",
       background: "linear-gradient(to right, #833ab4, #fd1d1d, #fcb045)",

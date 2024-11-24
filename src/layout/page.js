@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Pagination from "./pagination";
+import Pagination from "../component/pagination";
 
 function Page(props) {
   useEffect(() => {

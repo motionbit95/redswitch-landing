@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Section, SectionsContainer } from "react-fullpage";
 import Topbar from "./layout/topbar";
 import Page from "./layout/page";
@@ -14,8 +14,14 @@ import img8 from "./asset/page/8.png";
 import img9 from "./asset/page/9.png";
 import img10 from "./asset/page/10.png";
 import img11 from "./asset/page/11.png";
-import InstagramButton from "./layout/instagram";
+import InstagramButton from "./component/instagram";
 import CenteredForm from "./layout/form";
+import { useMediaQuery } from "react-responsive";
+import Header from "./layout/header";
+import Link from "antd/es/typography/Link";
+import Scroll from "./component/scroll";
+import Content from "./layout/content";
+import { Intro1 } from "./page/intro";
 
 let options = {
   anchors: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
@@ -24,13 +30,34 @@ let options = {
 };
 
 function App(props) {
+  const isMobile = useMediaQuery({ maxWidth: 680 });
+  const isTablet = useMediaQuery({ minWidth: 680, maxWidth: 1024 });
+  const isDesktop = useMediaQuery({ minWidth: 1025 });
+
+  const size = isMobile ? "mobile" : isTablet ? "tablet" : "desktop";
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {});
+    };
+  }, []);
   return (
-    <>
-      <Topbar />
+    <div
+      style={{
+        minWidth: "300px",
+      }}
+    >
+      <Header size={size} />
+      <Scroll size={size} />
       <SectionsContainer {...options}>
         <Section>
-          <Page>
-            <img src={img1} alt="main" className="image" />
+          <Page pageNumber={1} groupNumber={3}>
+            <Intro1 size={size} />
           </Page>
         </Section>
         <Section>
@@ -86,7 +113,7 @@ function App(props) {
         </Section>
       </SectionsContainer>
       <InstagramButton />
-    </>
+    </div>
   );
 }
 
